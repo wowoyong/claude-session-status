@@ -1,0 +1,50 @@
+{
+  "name": "dependency-doctor",
+  "version": "1.0.0",
+  "description": "Dependency management and health checker for multi-language projects",
+  "author": "jojaeyong",
+  "skills": [
+    {
+      "name": "diagnose",
+      "path": "skills/diagnose/SKILL.md",
+      "triggers": [
+        "/diagnose",
+        "/dep-doctor",
+        "/dependency-doctor"
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "name": "diagnose",
+      "path": "commands/diagnose.md",
+      "description": "Run full dependency health diagnosis"
+    },
+    {
+      "name": "upgrade",
+      "path": "commands/upgrade.md",
+      "description": "Plan and execute dependency upgrades"
+    }
+  ],
+  "agents": [
+    {
+      "name": "vulnerability-scanner",
+      "path": "agents/vulnerability-scanner.md",
+      "description": "Deep scan for CVEs, security advisories, and known vulnerabilities"
+    },
+    {
+      "name": "upgrade-planner",
+      "path": "agents/upgrade-planner.md",
+      "description": "Plan safe upgrade order and handle peer dependency conflicts"
+    }
+  ],
+  "supportedEcosystems": [
+    "npm",
+    "pip",
+    "bundler",
+    "cargo",
+    "go",
+    "composer"
+  ],
+  "license": "MIT"
+}
