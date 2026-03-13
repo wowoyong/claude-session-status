@@ -1,0 +1,27 @@
+{
+  "name": "claude-session-status",
+  "version": "1.0.0",
+  "description": "Lightweight statusline for Claude Code CLI — shows path, model, tokens, context usage",
+  "main": "dist/index.js",
+  "bin": {
+    "claude-session-status": "dist/index.js"
+  },
+  "files": ["dist/"],
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node18 --outfile=dist/index.js --banner:js='#!/usr/bin/env node'",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["claude", "claude-code", "statusline", "cli", "terminal"],
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wowoyong/claude-session-status.git"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.0",
+    "typescript": "^5.0.0",
+    "vitest": "^3.0.0"
+  }
+}
