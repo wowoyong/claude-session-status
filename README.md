@@ -1,32 +1,32 @@
 # claude-session-status
 
-Lightweight statusline for [Claude Code](https://claude.ai/code) CLI.
+[Claude Code](https://claude.ai/code) CLI용 경량 상태표시줄 패키지입니다.
 
-Shows current path, model, token usage, context percentage, and remaining capacity at a glance.
+현재 경로, 모델명, 토큰 사용량, 컨텍스트 사용률, 잔여량을 한눈에 확인할 수 있습니다.
 
 ```
 📁 ~/WebstormProjects  🤖 Opus 4.6  📊 ↑8.5K ↓1.2K  ██████░░░░ 62%  🔋 38%
 ```
 
-## Features
+## 주요 기능
 
-| Segment | Description |
-|---------|-------------|
-| 📁 Path | Current working directory (home abbreviated to `~`) |
-| 🤖 Model | Active Claude model name |
-| 📊 Tokens | Input (↑) and output (↓) token counts with K/M units |
-| Progress bar | Context window usage with color coding (green/yellow/red) |
-| 🔋 Remaining | Remaining context window percentage |
+| 구분 | 설명 |
+|------|------|
+| 📁 경로 | 현재 작업 디렉토리 (홈 디렉토리는 `~`로 축약) |
+| 🤖 모델 | 현재 사용 중인 Claude 모델명 |
+| 📊 토큰 | 입력(↑) / 출력(↓) 토큰 수 (K/M 단위 자동 변환) |
+| 프로그레스 바 | 컨텍스트 윈도우 사용률 (초록/노랑/빨강 색상) |
+| 🔋 잔여량 | 컨텍스트 윈도우 남은 비율 |
 
-## Install
+## 설치
 
 ```bash
 npm install -g claude-session-status
 ```
 
-## Setup
+## 설정
 
-Add to `~/.claude/settings.json`:
+`~/.claude/settings.json`에 추가:
 
 ```json
 {
@@ -37,7 +37,7 @@ Add to `~/.claude/settings.json`:
 }
 ```
 
-Or use without installing:
+설치 없이 바로 사용하려면:
 
 ```json
 {
@@ -48,23 +48,23 @@ Or use without installing:
 }
 ```
 
-## How It Works
+## 작동 방식
 
-Claude Code pipes session data as JSON to the statusline command's stdin. This tool parses the JSON and outputs a single formatted line with ANSI colors.
+Claude Code가 세션 데이터를 JSON 형태로 상태표시줄 커맨드의 stdin에 전달합니다. 이 도구는 JSON을 파싱하여 ANSI 컬러로 포맷팅된 한 줄의 텍스트를 stdout으로 출력합니다.
 
-### Color Coding
+### 색상 구분
 
-The progress bar changes color based on context usage:
+프로그레스 바는 컨텍스트 사용률에 따라 색상이 변합니다:
 
-- **Green** (0-50%) — plenty of room
-- **Yellow** (51-75%) — getting full
-- **Red** (76-100%) — running low
+- **초록** (0~50%) — 여유 있음
+- **노랑** (51~75%) — 주의 필요
+- **빨강** (76~100%) — 부족함
 
-## Requirements
+## 요구 사항
 
-- Node.js 18+
+- Node.js 18 이상
 - Claude Code CLI
 
-## License
+## 라이선스
 
 MIT
